@@ -1,0 +1,63 @@
+MIT License
+
+Copyright (c) 2024 Moyo Mzuri - Social Projects Donation Platform
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Additional Terms for M-Pesa Integration
+
+This software integrates with Safaricom's M-Pesa Daraja API. Users of this software must:
+
+1. Comply with Safaricom's M-Pesa API Terms and Conditions
+2. Obtain proper authorization and credentials from Safaricom
+3. Follow all applicable financial regulations and compliance requirements
+4. Ensure proper handling of financial data and user privacy
+5. Implement appropriate security measures for payment processing
+
+The authors of this software are not responsible for:
+- Misuse of M-Pesa API credentials
+- Violations of financial regulations
+- Unauthorized payment processing
+- Data breaches related to payment information
+- Any financial losses incurred through the use of this software
+
+## Data Privacy Notice
+
+This software processes personal and financial data. Users must:
+- Comply with applicable data protection laws (GDPR, CCPA, etc.)
+- Implement proper data security measures
+- Obtain necessary user consents for data processing
+- Provide clear privacy policies to end users
+- Ensure secure handling of phone numbers and payment information
+
+## Disclaimer
+
+This software is provided for educational and development purposes. Before using
+in production, especially for handling real financial transactions:
+
+1. Conduct thorough security audits
+2. Implement proper monitoring and logging
+3. Ensure compliance with local financial regulations
+4. Test extensively in sandbox environments
+5. Consider professional security review
+
+The authors make no warranties about the suitability of this software for
+production use in financial applications.
