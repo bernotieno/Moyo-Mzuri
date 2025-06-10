@@ -61,7 +61,7 @@
 			<div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
 				<div class="text-center">
 					<p class="text-gray-600 dark:text-gray-400">
-						© 2024 {PUBLIC_APP_NAME || 'Moyo Mzuri'}. Supporting social projects in our community.
+						© 2025 {PUBLIC_APP_NAME || 'Moyo Mzuri'}. Supporting social projects in our community.
 					</p>
 				</div>
 			</div>
