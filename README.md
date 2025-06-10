@@ -1,6 +1,6 @@
 # Moyo Mzuri - Social Projects Donation Platform
 
-**Moyo Mzuri** (meaning "Good Heart" in Swahili) is a modern, full-stack donation platform built with SvelteKit that enables communities to support meaningful social projects through secure M-Pesa payments.
+**Moyo Mzuri** (meaning "Good Heart" in Swahili) is a modern donation platform built with SvelteKit that enables communities to support meaningful social projects through secure M-Pesa payments.
 
 ## 🌟 Features
 
