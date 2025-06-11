@@ -1,8 +1,9 @@
 import { json } from '@sveltejs/kit';
 import { db } from '$lib/server/db/index.js';
 import { donations, projects } from '$lib/server/db/schema.js';
-import { eq } from 'drizzle-orm';
+import { eq, sql } from 'drizzle-orm';
 import { initiateSTKPush } from '$lib/server/mpesa.js';
+import { env } from '$env/dynamic/private';
 
 /** @type {import('./$types').RequestHandler} */
 export async function POST({ request }) {
@@ -135,9 +136,42 @@ export async function POST({ request }) {
 			})
 			.where(eq(donations.id, donationId));
 
+		// In development/sandbox mode, simulate successful payment after a delay
+		if (env.MPESA_CALLBACK_URL?.includes('placeholder-dev-url') || env.MPESA_CALLBACK_URL?.includes('localhost')) {
+			console.log('Development mode: Simulating successful payment in 10 seconds...');
+			setTimeout(async () => {
+				try {
+					// Simulate successful callback
+					await db
+						.update(donations)
+						.set({
+							status: 'completed',
+							mpesaReceiptNumber: `DEV${Date.now()}`,
+							completedAt: new Date()
+						})
+						.where(eq(donations.id, donationId));
+
+					// Update project total raised
+					await db
+						.update(projects)
+						.set({
+							totalRaised: sql`${projects.totalRaised} + ${donationAmount}`,
+							updatedAt: new Date()
+						})
+						.where(eq(projects.id, parseInt(projectId)));
+
+					console.log(`Development: Donation ${donationId} marked as completed`);
+				} catch (error) {
+					console.error('Development simulation error:', error);
+				}
+			}, 10000); // 10 seconds delay
+		}
+
 		return json({
 			success: true,
-			message: 'STK Push initiated successfully. Please check your phone for the payment prompt.',
+			message: env.MPESA_ENVIRONMENT === 'sandbox' && env.MPESA_CALLBACK_URL?.includes('localhost')
+				? 'STK Push initiated successfully. In development mode, payment will be auto-completed in 10 seconds.'
+				: 'STK Push initiated successfully. Please check your phone for the payment prompt.',
 			donation: {
 				id: donationId,
 				checkoutRequestId: stkResult.checkoutRequestId,
