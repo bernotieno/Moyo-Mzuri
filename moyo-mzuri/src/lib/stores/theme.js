@@ -12,6 +12,7 @@ function applyTheme(theme) {
 	}
 }
 
+
 // Create theme store with default value
 function createThemeStore() {
 	const { subscribe, set, update } = writable('light');
