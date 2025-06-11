@@ -95,7 +95,7 @@
    MPESA_CONSUMER_SECRET="your_consumer_secret"
    MPESA_BUSINESS_SHORT_CODE="your_shortcode"
    MPESA_PASSKEY="your_passkey"
-   MPESA_CALLBACK_URL="https://yourdomain.com/api/mpesa/callback"
+   MPESA_CALLBACK_URL="http://localhost:5173/api/mpesa/callback"
    
    # Admin Configuration
    ADMIN_PASSWORD="your_secure_admin_password"
